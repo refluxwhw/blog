@@ -40,8 +40,6 @@ void MainWindow::onGetCurrentDatetime()
 void MainWindow::onDatatimeToTimestamp()
 {
     QDateTime t = QDateTime::fromString(ui->datetime->text(), ui->format->text());
-    t.setTimeSpec(Qt::UTC);
-
     if (t.isValid()) {
         QString str;
         if (ui->comboBox->currentIndex() == 0) {
@@ -62,9 +60,9 @@ void MainWindow::onTimestampToDatetime()
 {
     QDateTime t;
     if (ui->comboBox->currentIndex() == 0) {
-        t = QDateTime::fromTime_t(ui->timestamp->text().toUInt(), Qt::UTC);
+        t = QDateTime::fromTime_t(ui->timestamp->text().toUInt());
     } else {
-        t = QDateTime::fromMSecsSinceEpoch(ui->timestamp->text().toULongLong(), Qt::UTC);
+        t = QDateTime::fromMSecsSinceEpoch(ui->timestamp->text().toULongLong());
     }
 
     ui->datetime->setText(t.toString(ui->format->text()));

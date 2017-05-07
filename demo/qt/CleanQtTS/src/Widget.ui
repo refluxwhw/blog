@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Widget</class>
+ <widget class="QWidget" name="Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>607</width>
+    <height>571</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Widget</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>&lt;html&gt;
+&lt;head/&gt;
+  &lt;body&gt;
+    &lt;p&gt;此工具为解决下面问题而设计：&lt;/p&gt;
+    &lt;p&gt;&amp;nbsp;&amp;nbsp;在Qt多国语言的ts文件中，存在一些已经删除的翻译，显示为“源不可用”，并且无法删除。&lt;/p&gt;
+    &lt;p&gt;解决原理：&lt;/p&gt;
+    &lt;p&gt;&amp;nbsp;&amp;nbsp;ts文件为xml文件，最终每个翻译会以&lt;/p&gt;
+    &lt;p&gt;&lt;span style=&quot; color:#55007f;&quot;&gt;&amp;lt;message&amp;gt;&lt;/span&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;span style=&quot; color:#55007f;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;lt;location filename=&amp;quot;file_path&amp;quot; line=&amp;quot;line_num&amp;quot;/&amp;gt;&lt;/span&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;span style=&quot; color:#55007f;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;lt;source&amp;gt;text in your source&amp;lt;/source&amp;gt;&lt;/span&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;span style=&quot; color:#55007f;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;lt;translation&amp;gt;text you want translat to&amp;lt;/translation&amp;gt;&lt;/span&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;span style=&quot; color:#55007f;&quot;&gt;&amp;lt;/message&amp;gt;&lt;/span&gt;&lt;/p&gt;
+    &lt;p&gt;&amp;nbsp;&amp;nbsp;这种格式存在，如果没有location，那么就会显示为“源不可用”，所以只需要解析xml文件，并且删除location不存在的message节点即可。&lt;/p&gt;
+    &lt;p&gt;使用方法：&lt;/&gt;
+    &lt;p&gt;&amp;nbsp;&amp;nbsp;直接将ts文件拖到下面编辑框即可&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="DragTextEdit" name="textEdit"/>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>DragTextEdit</class>
+   <extends>QTextEdit</extends>
+   <header>DragTextEdit.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
